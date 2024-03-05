@@ -9,7 +9,7 @@ export const Home = () => {
   const theme = useSelector((state: RootState) => state.theme);
   return (
     <main className={styles.main}>
-      <Nav theme={theme} />
+      <Nav/>
       <div className={styles.container}>
         <HeaderTime />
         <ContainerMetrics theme={theme} />
