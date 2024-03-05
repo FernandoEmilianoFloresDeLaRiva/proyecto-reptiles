@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container img {
+  width: 70%;
+}
+
+.container figcaption {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-family: "kodchasan";
+}
