@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from "react";
+import { Route } from "wouter";
 
-export const PrivateRoute = () => {
-  return (
-    <div>PrivateRoute</div>
-  )
+interface Props {
+  path: string;
+  children: ReactNode;
 }
+
+export const PrivateRoute: React.FC<Props> = ({ path, children }) => {
+  return <Route path={path}>{children}</Route>;
+};
