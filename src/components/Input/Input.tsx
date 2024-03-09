@@ -1,13 +1,11 @@
-import React, { HTMLInputTypeAttribute } from 'react'
-import styles from "./Input.module.css"
+import React, { HTMLInputTypeAttribute } from "react";
+import styles from "./Input.module.css";
 
 interface Props {
-    text : string;
-    type ?: HTMLInputTypeAttribute ;
+  text: string;
+  type?: HTMLInputTypeAttribute;
 }
 
-export const Input : React.FC<Props> = ({text, type}) => {
-  return (
-    <input type={type} placeholder={text} className={styles.input}/>
-  )
-}
+export const Input: React.FC<Props> = ({ text, type }) => {
+  return <input type={type} placeholder={text} className={styles.input} />;
+};
