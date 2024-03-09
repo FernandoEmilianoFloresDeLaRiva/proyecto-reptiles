@@ -1,5 +1,5 @@
 import styles from "./ErrorMessage.module.css";
-import warningSvg from "../../assets/svgs/warning.svg"
+import warningSvg from "../../assets/svgs/warning.svg";
 
 interface Props {
   message: string;
