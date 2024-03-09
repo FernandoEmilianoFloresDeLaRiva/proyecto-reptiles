@@ -39,6 +39,5 @@ export const CreateUserSchema = z.object({
       message: "La longitud maxima es de 60 caracteres",
     })
     .optional()
-    .nullable()
-    .default(null),
+    .default(""),
 });

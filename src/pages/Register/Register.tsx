@@ -7,7 +7,7 @@ import { useLocation } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CreateUserSchema } from "../../entities/validators/CreateUser.validator";
-import { RegisterUserBase } from "../../entities/entity";
+import { type RegisterUserBase } from "../../entities/entity";
 import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
 
 export const Register = () => {

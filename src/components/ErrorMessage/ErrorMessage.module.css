@@ -1,4 +1,5 @@
 .containerError {
+  text-transform: capitalize;
   transition: ease-in-out 1s;
   animation: first-appear 0.3s;
   width: 50%;
