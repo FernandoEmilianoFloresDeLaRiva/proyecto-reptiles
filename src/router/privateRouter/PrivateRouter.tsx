@@ -2,7 +2,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import { Menu } from "../../pages/Menu/Menu";
 import { Home } from "../../pages/Home/Home";
 import { useSelector } from "react-redux";
-import { RootState } from "../../entities/reduxState.entity";
+import { RootState } from "../../entities/entity/reduxState.entity";
 
 export const PrivateRouter = () => {
   const theme = useSelector((state: RootState) => state.theme);
@@ -12,7 +12,7 @@ export const PrivateRouter = () => {
         <Menu />
       </PrivateRoute>
       <PrivateRoute path="/home" theme={theme}>
-        <Home/>
+        <Home />
       </PrivateRoute>
     </>
   );

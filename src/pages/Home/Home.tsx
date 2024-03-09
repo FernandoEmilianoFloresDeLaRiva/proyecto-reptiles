@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { HeaderTime } from "../../components/HeaderTime/HeaderTime";
 import { Nav } from "../../components/Nav/Nav";
-import { RootState } from "../../entities/reduxState.entity";
+import { RootState } from "../../entities/entity/reduxState.entity";
 import styles from "./Home.module.css";
 import { ContainerMetrics } from "../../components/ContainerMetrics/ContainerMetrics";
 
