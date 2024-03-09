@@ -14,7 +14,7 @@ function Login() {
   return (
     <main className={styles.main}>
       <div className={styles.containerLogo}>
-        <Logo urlImg={reptileImg} />
+        <Logo urlImg={reptileImg} title="TERRARIUM" />
       </div>
       <form className={styles.form}>
         <span>Iniciar Sesión</span>
