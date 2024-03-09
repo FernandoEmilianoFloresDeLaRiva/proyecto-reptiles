@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CreateUserSchema } from "../../entities/validators/CreateUser.validator";
 import { type RegisterUserBase } from "../../entities/entity";
 import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
+import { registerUserService } from "../../services/services/users/registerUser.service";
 
 export const Register = () => {
   const [_location, setLocation] = useLocation();
@@ -22,7 +23,7 @@ export const Register = () => {
     setLocation("/");
   };
   const handleOnSubmit = (data: RegisterUserBase) => {
-    console.log(data);
+    registerUserService(data);
   };
   return (
     <main className={styles.main}>

@@ -3,8 +3,8 @@ import { z } from "zod";
 export const LoginUserSchema = z.object({
   username: z
     .string()
-    .email({
-      message: "username invalido",
+    .min(1, {
+      message: "username requerido",
     })
     .max(45, {
       message: "La longitud maxima es de 45 caracteres",

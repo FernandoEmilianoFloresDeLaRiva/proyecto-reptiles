@@ -35,9 +35,10 @@ export const CreateUserSchema = z.object({
     }),
   last_name: z
     .string()
+    .min(1, {
+      message: "El apellido es un campo requerido",
+    })
     .max(60, {
       message: "La longitud maxima es de 60 caracteres",
-    })
-    .optional()
-    .default(""),
+    }),
 });

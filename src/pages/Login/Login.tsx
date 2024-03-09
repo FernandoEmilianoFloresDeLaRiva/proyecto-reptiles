@@ -9,6 +9,7 @@ import { type LoginUserBase } from "../../entities/entity";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginUserSchema } from "../../entities/validators/LoginUser.validator";
 import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
+import { loginUserService } from "../../services/services/users/loginUser.service";
 
 function Login() {
   const [_location, setLocation] = useLocation();
@@ -22,7 +23,7 @@ function Login() {
     setLocation("/register");
   };
   const handleLogin = (data: LoginUserBase) => {
-    console.log(data);
+    loginUserService(data);
   };
   return (
     <main className={styles.main}>
