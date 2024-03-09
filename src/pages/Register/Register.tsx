@@ -14,7 +14,7 @@ export const Register = () => {
   return (
     <main className={styles.main}>
       <div className={styles.containerLogo}>
-        <Logo urlImg={frogImg} />
+        <Logo urlImg={frogImg} title="TERRARIUM" />
       </div>
       <form className={styles.form}>
         <span>Registrarse</span>

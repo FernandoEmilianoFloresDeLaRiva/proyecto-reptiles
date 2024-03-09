@@ -1,0 +1,25 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.container button{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 40%;
+    transition: ease-in-out 0.3s;
+}
+
+.container button:hover{
+    scale: 1.1;
+    cursor: pointer;
+    border-bottom: 10px solid #52B950;
+    border-radius: 0 0 10px 10px;
+}
