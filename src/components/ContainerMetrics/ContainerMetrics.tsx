@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ContainerMetrics.module.css";
-import { ThemeOptions } from "../../entities/entity/themeOptions.entity";
+import { ThemeOptions } from "../../redux/entities";
 
 interface Props {
   theme: ThemeOptions;

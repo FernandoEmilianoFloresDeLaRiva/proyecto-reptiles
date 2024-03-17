@@ -10,9 +10,12 @@ import { CreateUserSchema } from "../../entities/validators/CreateUser.validator
 import { type RegisterUserBase } from "../../entities/entity";
 import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
 import { registerUserService } from "../../services/services/users/registerUser.service";
+import { useAppDispatch } from "../../redux/entities/reduxDispatch.entity";
+import { registerUserAsync } from "../../redux/Auth/thunks";
 
 export const Register = () => {
   const [_location, setLocation] = useLocation();
+  const useDispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
@@ -23,7 +26,8 @@ export const Register = () => {
     setLocation("/");
   };
   const handleOnSubmit = (data: RegisterUserBase) => {
-    registerUserService(data);
+    useDispatch(registerUserAsync(data));
+    setLocation("/menu");
   };
   return (
     <main className={styles.main}>

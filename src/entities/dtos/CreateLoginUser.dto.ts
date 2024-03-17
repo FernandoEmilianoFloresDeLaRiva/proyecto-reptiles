@@ -1,11 +1,11 @@
 import { LoginUserBase } from "../entity";
 
 export class CreateLoginUserDto {
-  username: string;
+  email: string;
   passwordUser: string;
   constructor(userLoginReq: LoginUserBase) {
-    const { username, password } = userLoginReq;
-    this.username = username;
+    const { email, password } = userLoginReq;
+    this.email = email;
     this.passwordUser = password;
   }
 }

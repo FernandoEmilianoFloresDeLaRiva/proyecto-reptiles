@@ -9,10 +9,12 @@ import { type LoginUserBase } from "../../entities/entity";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginUserSchema } from "../../entities/validators/LoginUser.validator";
 import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
-import { loginUserService } from "../../services/services/users/loginUser.service";
+import { useAppDispatch } from "../../redux/entities/reduxDispatch.entity";
+import { loginUserAsync } from "../../redux/Auth/thunks";
 
 function Login() {
   const [_location, setLocation] = useLocation();
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
@@ -23,7 +25,8 @@ function Login() {
     setLocation("/register");
   };
   const handleLogin = (data: LoginUserBase) => {
-    loginUserService(data);
+    dispatch(loginUserAsync(data));
+    setLocation("/");
   };
   return (
     <main className={styles.main}>
@@ -33,9 +36,9 @@ function Login() {
       <form className={styles.form}>
         <span>Iniciar Sesión</span>
         <div className={styles.containerInput}>
-          <Input text="Usuario" config={register("username")} />
-          {errors?.username?.message && (
-            <ErrorMessage message={errors?.username?.message} />
+          <Input text="Email" config={register("email")} />
+          {errors?.email?.message && (
+            <ErrorMessage message={errors?.email?.message} />
           )}
           <Input
             text="Contraseña"
