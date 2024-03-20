@@ -7,13 +7,13 @@ export const AddTerrarium = () => {
   const [, setLocation] = useLocation();
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
-    setLocation("/");
+    setLocation("/home");
   };
   return (
     <main className={styles.main}>
       <span>Agregar Terrarios</span>
       <form className={styles.form}>
-        
+      
         <div className={styles.containerInput}>
           <Input text="Código de registro" />
           <Input text="Nombre" />

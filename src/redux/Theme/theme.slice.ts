@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setThemeReducer } from "./reducers/setTheme.reducer";
+import { ReduxSliceName } from "../entities";
 
 export const themeSlice = createSlice({
-  name: "theme",
+  name: ReduxSliceName.THEME,
   initialState: "",
   reducers: {
     setTheme: setThemeReducer,
