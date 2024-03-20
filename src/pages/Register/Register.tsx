@@ -6,7 +6,7 @@ import { Logo } from "../../components/Logo/Logo";
 import { useLocation } from "wouter";
 
 export const Register = () => {
-  const [_location, setLocation] = useLocation();
+  const [, setLocation] = useLocation();
   const handleBack = (e: React.MouseEvent) => {
     e.preventDefault();
     setLocation("/");
