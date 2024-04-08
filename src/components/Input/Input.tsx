@@ -8,7 +8,7 @@ interface Props {
   config?: UseFormRegisterReturn;
 }
 
-export const Input: React.FC<Props> = ({ text, type, config }) => {
+export const Input: React.FC<Props> = ({ text, type = "text", config }) => {
   return (
     <input
       type={type}
