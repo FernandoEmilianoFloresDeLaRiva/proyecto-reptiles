@@ -16,3 +16,16 @@
   align-items: center;
   gap: 2%;
 }
+
+.containerImg a:hover {
+  cursor: pointer;
+}
+
+.plusImg{
+  padding-bottom: 2%;
+  left: 3%;
+  position: absolute; 
+  bottom: 0;
+  height: 12%;
+  width: 5%;
+}

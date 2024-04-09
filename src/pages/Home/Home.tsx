@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { HeaderTime } from "../../components/HeaderTime/HeaderTime";
 import { Nav } from "../../components/Nav/Nav";
 import { RootState } from "../../redux/entities";
+import plus from "../../assets/svgs/plus.svg";
 import styles from "./Home.module.css";
 import { ContainerMetrics } from "../../components/ContainerMetrics/ContainerMetrics";
 
@@ -13,7 +14,14 @@ export const Home = () => {
       <div className={styles.container}>
         <HeaderTime />
         <ContainerMetrics theme={theme} />
+        <div className={styles.containerImg}>
+          <a>
+            <img className={styles.plusImg} src={plus} alt="plus-img" />
+          </a>
+        </div>
       </div>
+      
+        
     </main>
   );
 };
