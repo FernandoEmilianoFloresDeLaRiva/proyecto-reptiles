@@ -8,8 +8,13 @@ import { AddTerrariumBase } from "../../../entities/entity";
 import { AddTerrariumSchema } from "../validator/AddTerrarium.validator";
 import { ErrorMessage } from "../../../components/ErrorMessage/ErrorMessage";
 import { ContainerErrorInput } from "../components/ContainerErrorInput/ContainerErrorInput";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/entities";
+import { postTerrariumService } from "../../../services/services/terrariums/postTerrarium.service";
+import { AddTerrariumDto } from "../../../entities/dtos/AddTerrarium.dto";
 
 export const AddTerrarium = () => {
+  const { id, token } = useSelector((state: RootState) => state.auth);
   const [, setLocation] = useLocation();
   const {
     register,
@@ -20,8 +25,10 @@ export const AddTerrarium = () => {
     e.preventDefault();
     setLocation("/home");
   };
-  const handleRegister = (data: AddTerrariumBase) => {
-    console.log(data);
+  const handleRegister = async (data: AddTerrariumBase) => {
+    const reqTerrarium = new AddTerrariumDto(data, id);
+    const res = await postTerrariumService(reqTerrarium, token);
+    console.log(res);
     setLocation("/home");
   };
   return (
