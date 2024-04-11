@@ -13,7 +13,6 @@ export const AddTerrarium = () => {
     <main className={styles.main}>
       <span>Agregar Terrarios</span>
       <form className={styles.form}>
-      
         <div className={styles.containerInput}>
           <Input text="Código de registro" />
           <Input text="Nombre" />

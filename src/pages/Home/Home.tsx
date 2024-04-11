@@ -5,9 +5,14 @@ import { RootState } from "../../redux/entities";
 import plus from "../../assets/svgs/plus.svg";
 import styles from "./Home.module.css";
 import { ContainerMetrics } from "../../components/ContainerMetrics/ContainerMetrics";
+import { useLocation } from "wouter";
 
 export const Home = () => {
   const theme = useSelector((state: RootState) => state.theme);
+  const [_location, setLocation] = useLocation();
+  const handlePlus = () => {
+    setLocation("/create");
+  };
   return (
     <main className={styles.main}>
       <Nav />
@@ -15,13 +20,11 @@ export const Home = () => {
         <HeaderTime />
         <ContainerMetrics theme={theme} />
         <div className={styles.containerImg}>
-          <a>
+          <a onClick={handlePlus}>
             <img className={styles.plusImg} src={plus} alt="plus-img" />
           </a>
         </div>
       </div>
-      
-        
     </main>
   );
 };
