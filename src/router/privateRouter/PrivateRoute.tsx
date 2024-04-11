@@ -8,6 +8,7 @@ interface Props {
 }
 
 export const PrivateRoute: React.FC<Props> = ({ path, children, theme }) => {
+  console.log(theme)
   return (
     <>
       {theme !== undefined ? (

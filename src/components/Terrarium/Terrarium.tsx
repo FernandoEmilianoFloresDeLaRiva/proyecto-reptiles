@@ -1,5 +1,11 @@
 import styles from "./Terrarium.module.css";
 
-export const Terrarium = () => {
-  return <ol className={styles.terrarium}>Terrarium</ol>;
+interface Props {
+  terrariumName: string;
+}
+
+const Terrarium: React.FC<Props> = ({ terrariumName }) => {
+  return <ol className={styles.terrarium}>{terrariumName}</ol>;
 };
+
+export default Terrarium;

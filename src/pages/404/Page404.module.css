@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+
+.containerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+}
+
+.container404 {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "kodchasan";
+  font-size: 2rem;
+}
+
+.firstText {
+  font-size: 5rem;
+}
+
+.container404 a {
+  padding: 2% 0;
+  border-bottom: 2px solid #168c03;
+  transition: 0.5s ease-in-out;
+}
+
+.container404 a:hover {
+  cursor: pointer;
+  border-bottom: 3px solid #65c181;
+}
