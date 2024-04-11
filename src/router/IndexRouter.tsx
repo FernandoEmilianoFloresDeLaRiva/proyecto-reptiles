@@ -1,28 +1,27 @@
 import styles from "./IndexRouter.module.css";
 import { Route } from "wouter";
-// import Login from "../pages/Login/Login";
-import { Register } from "../pages/Register/Register";
-// import {AddTerrarium} from "../pages/AddTerrarium/AddTerrarium";
+import { Register } from "../pages/Register/page/Register";
 import { PrivateRouter } from "./privateRouter/PrivateRouter";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/entities";
+import Login from "../pages/Login/page/Login";
 
 export const IndexRouter = () => {
   const { token } = useSelector((state: RootState) => state.auth);
   return (
     <div className={styles.body}>
-      {/* {token ? ( */}
+      {token ? (
         <PrivateRouter />
-       {/* ) : ( */}
-         {/* <> */}
-          {/* <Route path="/">
+      ) : (
+        <>
+          <Route path="/">
             <Login />
-          </Route> */}
+          </Route>
           <Route path="/register">
             <Register />
           </Route>
-        {/* </> */}
-      {/* )} */}
+        </>
+      )}
     </div>
   );
 };

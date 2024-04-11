@@ -1,16 +1,16 @@
 import React from "react";
-import { Logo } from "../../components/Logo/Logo";
-import reptileImg from "../../assets/imgs/reptil_login.png";
+import { Logo } from "../../../components/Logo/Logo";
+import reptileImg from "../../../assets/imgs/reptil_login.png";
 import styles from "./Login.module.css";
-import { Input } from "../../components/Input/Input";
+import { Input } from "../../../components/Input/Input";
 import { useLocation } from "wouter";
 import { useForm } from "react-hook-form";
-import { type LoginUserBase } from "../../entities/entity";
+import { type LoginUserBase } from "../../../entities/entity";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginUserSchema } from "../../entities/validators/LoginUser.validator";
-import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
-import { useAppDispatch } from "../../redux/entities/reduxDispatch.entity";
-import { loginUserAsync } from "../../redux/Auth/thunks";
+import { LoginUserSchema } from "../validator/LoginUser.validator";
+import { ErrorMessage } from "../../../components/ErrorMessage/ErrorMessage";
+import { useAppDispatch } from "../../../redux/entities/reduxDispatch.entity";
+import { loginUserAsync } from "../../../redux/Auth/thunks";
 
 function Login() {
   const [_location, setLocation] = useLocation();

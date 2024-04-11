@@ -12,11 +12,8 @@ export const loginUserAsync = createAsyncThunk(
   async (payload: LoginUserBase) => {
     try {
       const loginUserDTO = new CreateLoginUserDto(payload);
-      console.log(loginUserDTO)
       const response = await loginUserService(loginUserDTO);
-      
       const token = new CreateTokenResponse(response);
-      
       return token;
     } catch (error: any) {
       console.error("Error login user");

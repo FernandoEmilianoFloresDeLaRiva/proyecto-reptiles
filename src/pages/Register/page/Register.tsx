@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./Register.module.css";
-import frogImg from "../../assets/imgs/frog_register.png";
-import { Input } from "../../components/Input/Input";
-import { Logo } from "../../components/Logo/Logo";
+import frogImg from "../../../assets/imgs/frog_register.png";
+import { Input } from "../../../components/Input/Input";
+import { Logo } from "../../../components/Logo/Logo";
 import { useLocation } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CreateUserSchema } from "../../entities/validators/CreateUser.validator";
-import { type RegisterUserBase } from "../../entities/entity";
-import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage";
+import { CreateUserSchema } from "../validator/CreateUser.validator";
+import { type RegisterUserBase } from "../../../entities/entity";
+import { ErrorMessage } from "../../../components/ErrorMessage/ErrorMessage";
 // import { registerUserService } from "../../services/services/users/registerUser.service";
-import { useAppDispatch } from "../../redux/entities/reduxDispatch.entity";
-import { registerUserAsync } from "../../redux/Auth/thunks";
+import { useAppDispatch } from "../../../redux/entities/reduxDispatch.entity";
+import { registerUserAsync } from "../../../redux/Auth/thunks";
 
 export const Register = () => {
   const [setLocation] = useLocation();
