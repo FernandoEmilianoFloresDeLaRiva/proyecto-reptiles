@@ -14,7 +14,7 @@ import { useAppDispatch } from "../../../redux/entities/reduxDispatch.entity";
 import { registerUserAsync } from "../../../redux/Auth/thunks";
 
 export const Register = () => {
-  const [setLocation] = useLocation();
+  const [, setLocation] = useLocation();
   const useDispatch = useAppDispatch();
   const {
     register,
