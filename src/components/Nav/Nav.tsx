@@ -3,7 +3,7 @@ import { TerrariumsList } from "../TerrariumsList/TerrariumsList";
 import menu from "../../assets/svgs/menu.svg";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../entities/reduxState.entity";
+import { RootState } from "../../redux/entities";
 export const Nav = () => {
   const theme = useSelector((state: RootState) => state.theme);
   const navRef = useRef<HTMLDivElement>(null);

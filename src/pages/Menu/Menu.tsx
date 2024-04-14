@@ -2,7 +2,7 @@ import styles from "./Menu.module.css";
 import { Logo } from "../../components/Logo/Logo";
 import frogImg from "../../assets/imgs/frog_register.png";
 import reptileImg from "../../assets/imgs/reptil_login.png";
-import { ThemeOptions } from "../../entities/themeOptions.entity";
+import { ThemeOptions } from "../../redux/entities";
 import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/Theme/theme.slice";
 import { useLocation } from "wouter";

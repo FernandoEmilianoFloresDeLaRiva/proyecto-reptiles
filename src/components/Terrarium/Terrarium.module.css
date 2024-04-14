@@ -1,6 +1,19 @@
 .terrarium {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin: 0;
   width: 90%;
-  height: 10%;
+  min-height: 10%;
   border-bottom: 1px solid #fff;
+  font-family: "kodchasan";
+  word-break: break-all;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.terrarium:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(229, 255, 0);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
