@@ -1,0 +1,19 @@
+.container {
+  position: absolute;
+  bottom: 13%;
+  right: 2%;
+  width: 70%;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border-radius: 20px;
+}
+
+.anfibios {
+  background-color: rgb(169, 173, 223);
+}
+
+.reptiles {
+  background-color: #cee4ce;
+}
