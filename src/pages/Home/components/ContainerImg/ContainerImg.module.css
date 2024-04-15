@@ -1,0 +1,23 @@
+.container {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.anfibiosContainer {
+  mix-blend-mode: darken;
+}
+
+.reptilesContainer {
+  border: 2px solid #cee4ce;
+  border-radius: 10px;
+  background-color: #8ba88b;
+}
