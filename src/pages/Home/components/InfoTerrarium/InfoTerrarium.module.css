@@ -1,0 +1,48 @@
+.container {
+  padding-top: 5%;
+  width: 60%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-family: "kodchasan";
+}
+
+.container span{
+    font-size: 3rem;
+}
+
+.containerButtons {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.containerButtons button {
+  width: 35%;
+  height: 50%;
+  border-color: transparent;
+  border-radius: 10px;
+  color: #FFF;
+  font-size: 1.3rem;
+  font-family: "kodchasan";
+  transition: ease-in-out 0.5s;
+}
+
+.containerButtons button:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.anfibios {
+  background-color: rgba(169, 173, 223, 0.749);
+}
+
+.reptiles {
+  background-color: #cee4ce;
+}
