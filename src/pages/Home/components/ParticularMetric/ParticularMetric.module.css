@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  text-wrap: pretty;
+  font-family: "kodchasan";
+}
+.containerNumber {
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 550;
+  line-height: 1.4em;
+}
+.containerParagraph {
+  color: #ffffff;
+  text-transform: none;
+  font-size: 1.3rem;
+  font-weight: 450;
+}
