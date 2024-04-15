@@ -1,14 +1,12 @@
-import { useSelector } from "react-redux";
 import { HeaderTime } from "../../components/HeaderTime/HeaderTime";
 import { Nav } from "../../components/Nav/Nav";
-import { RootState } from "../../redux/entities";
 import plus from "../../assets/svgs/plus.svg";
 import styles from "./Home.module.css";
 import { ContainerMetrics } from "../../components/ContainerMetrics/ContainerMetrics";
 import { useLocation } from "wouter";
 
 export const Home = () => {
-  const theme = useSelector((state: RootState) => state.theme);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_location, setLocation] = useLocation();
   const handlePlus = () => {
     setLocation("/create");
@@ -18,7 +16,7 @@ export const Home = () => {
       <Nav />
       <div className={styles.container}>
         <HeaderTime />
-        <ContainerMetrics theme={theme} />
+        <ContainerMetrics />
         <div className={styles.containerImg}>
           <a onClick={handlePlus}>
             <img className={styles.plusImg} src={plus} alt="plus-img" />
