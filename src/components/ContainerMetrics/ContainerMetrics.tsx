@@ -14,7 +14,7 @@ export const ContainerMetrics = () => {
     <section className={styles.container}>
       <ContainerImg />
       <InfoTerrarium terrariumName={terrarium.name}/>
-      <Metrics theme={theme} />
+      <Metrics theme={theme} terrariumId={terrarium.id}/>
     </section>
   );
 };
