@@ -14,7 +14,7 @@ export const TerrariumsList = () => {
       {!isloading && (
         <Suspense fallback={"cargando..."}>
           {terrariums.map(({ id, name }) => {
-            return <TerrariumLazy key={id} terrariumName={name} />;
+            return <TerrariumLazy key={id} terrariumName={name} id={id} />;
           })}
         </Suspense>
       )}

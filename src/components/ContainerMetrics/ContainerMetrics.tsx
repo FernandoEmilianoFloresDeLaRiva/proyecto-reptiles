@@ -4,13 +4,16 @@ import { Metrics } from "../../pages/Home/components/Metrics/Metrics";
 import { InfoTerrarium } from "../../pages/Home/components/InfoTerrarium/InfoTerrarium";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/entities";
+import { useContext } from "react";
+import { TerrariumContext } from "../../pages/Home/context";
 
 export const ContainerMetrics = () => {
   const theme = useSelector((state: RootState) => state.theme);
+  const {terrarium} = useContext(TerrariumContext)
   return (
     <section className={styles.container}>
       <ContainerImg />
-      <InfoTerrarium terrariumName={"Terrario Rex"} theme={theme} />
+      <InfoTerrarium terrariumName={terrarium.name}/>
       <Metrics theme={theme} />
     </section>
   );
