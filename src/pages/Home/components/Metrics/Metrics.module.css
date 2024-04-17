@@ -10,6 +10,21 @@
   border-radius: 20px;
 }
 
+.containerWater {
+  color: red;
+  position: absolute;
+  bottom: 39%;
+  right: 1%;
+  width: 56%;
+  min-height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: kodchasan;
+  border-radius: 20px;
+}
+
 .anfibios {
   background-color: #5074b9;
 }

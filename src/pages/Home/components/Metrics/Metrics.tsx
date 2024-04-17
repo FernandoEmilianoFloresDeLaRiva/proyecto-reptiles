@@ -11,23 +11,33 @@ interface Props {
 }
 
 export const Metrics: React.FC<Props> = ({ theme, terrariumId, esp32Code }) => {
-  const { temperatura, uv, humedad } = useMetrics(terrariumId, esp32Code);
+  const [metrics, handleWater] = useMetrics(terrariumId, esp32Code);
+  const { temperatura, uv, humedad } = metrics;
   return (
-    <div
-      className={`${styles.container} ${
-        theme === ThemeOptions.ANFIBIOS ? styles.anfibios : styles.reptiles
-      } `}
-    >
-      {humedad !== null && (
-        <ParticularMetric metricData={`${humedad}%`} metricName="Humedad" />
+    <>
+      {handleWater && (
+        <span className={styles.containerWater}>
+          Rellene su contenedor de agua!
+        </span>
       )}
-      {temperatura !== null && (
-        <ParticularMetric
-          metricData={`${temperatura.toString().substring(0, 4)}°C`}
-          metricName="Temperatura"
-        />
-      )}
-      {uv !== null && <ParticularMetric metricData={`${uv}`} metricName="UV" />}
-    </div>
+      <div
+        className={`${styles.container} ${
+          theme === ThemeOptions.ANFIBIOS ? styles.anfibios : styles.reptiles
+        } `}
+      >
+        {humedad !== null && (
+          <ParticularMetric metricData={`${humedad}%`} metricName="Humedad" />
+        )}
+        {temperatura !== null && (
+          <ParticularMetric
+            metricData={`${temperatura.toString().substring(0, 4)}°C`}
+            metricName="Temperatura"
+          />
+        )}
+        {uv !== null && (
+          <ParticularMetric metricData={`${uv}`} metricName="UV" />
+        )}
+      </div>
+    </>
   );
 };
