@@ -1,6 +1,7 @@
 export interface MetricsEntity {
     id ?: number;
-    humidity : number;
-    temperature : number;
+    humedad : number;
+    temperatura : number;
     uv : number;
+    agua : number;
 }

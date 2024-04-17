@@ -3,7 +3,7 @@
   bottom: 13%;
   right: 2%;
   width: 70%;
-  height: 30%;
+  min-height: 30%;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;

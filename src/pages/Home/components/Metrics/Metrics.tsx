@@ -10,19 +10,25 @@ interface Props {
 }
 
 export const Metrics: React.FC<Props> = ({ theme, terrariumId }) => {
-  const { temperature, uv, humidity } = useMetrics(terrariumId);
+  const { temperatura, uv, humedad } = useMetrics(terrariumId);
   return (
     <div
       className={`${styles.container} ${
         theme === ThemeOptions.ANFIBIOS ? styles.anfibios : styles.reptiles
       } `}
     >
-      <ParticularMetric metricData={`${humidity}%`} metricName="Humedad" />
-      <ParticularMetric
-        metricData={`${temperature}°C`}
-        metricName="Temperatura"
-      />
-      <ParticularMetric metricData={`${uv}`} metricName="UV" />
+      {humedad !== undefined && (
+        <ParticularMetric metricData={`${humedad}%`} metricName="Humedad" />
+      )}
+      {temperatura !== undefined && (
+        <ParticularMetric
+          metricData={`${temperatura.toString().substring(0, 4)}°C`}
+          metricName="Temperatura"
+        />
+      )}
+      {uv !== undefined && (
+        <ParticularMetric metricData={`${uv}`} metricName="UV" />
+      )}
     </div>
   );
 };
