@@ -6,12 +6,12 @@
   min-height: 30%;
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
   border-radius: 20px;
 }
 
 .anfibios {
-  background-color: rgb(169, 173, 223);
+  background-color: #5074b9;
 }
 
 .reptiles {

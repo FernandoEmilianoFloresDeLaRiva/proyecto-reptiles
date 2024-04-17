@@ -18,18 +18,16 @@ export const Metrics: React.FC<Props> = ({ theme, terrariumId, esp32Code }) => {
         theme === ThemeOptions.ANFIBIOS ? styles.anfibios : styles.reptiles
       } `}
     >
-      {humedad && (
+      {humedad !== null && (
         <ParticularMetric metricData={`${humedad}%`} metricName="Humedad" />
       )}
-      {temperatura && (
+      {temperatura !== null && (
         <ParticularMetric
           metricData={`${temperatura.toString().substring(0, 4)}°C`}
           metricName="Temperatura"
         />
       )}
-      {uv !== undefined && (
-        <ParticularMetric metricData={`${uv}`} metricName="UV" />
-      )}
+      {uv !== null && <ParticularMetric metricData={`${uv}`} metricName="UV" />}
     </div>
   );
 };

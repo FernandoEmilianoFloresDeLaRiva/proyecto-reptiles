@@ -2,6 +2,7 @@ import { AddTerrariumBase } from "../entity";
 import { TerrariumProfileDto } from "./TerrariumProfile.dto";
 
 export class AddTerrariumDto {
+  id ?: number;
   codeEsp: string;
   name: string;
   terrariumProfile: TerrariumProfileDto;
