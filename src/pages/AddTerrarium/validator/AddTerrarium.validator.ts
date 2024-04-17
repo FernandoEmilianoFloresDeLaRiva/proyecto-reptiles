@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const AddTerrariumSchema = z.object({
+  codeEsp : z.string().min(1, { message: "Agregue codigo de vinculación" }),
   name: z
     .string()
     .min(1, {

@@ -11,12 +11,21 @@ export const TerrariumsList = () => {
   const { terrariums, isloading } = useTerrariumsByUser(id, token);
   return (
     <li className={styles.list}>
-      {!isloading && (
+      {!isloading && terrariums.length ? (
         <Suspense fallback={"cargando..."}>
-          {terrariums.map(({ id, name }) => {
-            return <TerrariumLazy key={id} terrariumName={name} id={id} />;
+          {terrariums.map(({ id, name, codeEsp }) => {
+            return (
+              <TerrariumLazy
+                key={id}
+                terrariumName={name}
+                id={id}
+                esp32Code={codeEsp}
+              />
+            );
           })}
         </Suspense>
+      ) : (
+        <span>No hay terrarios registrados!</span>
       )}
     </li>
   );

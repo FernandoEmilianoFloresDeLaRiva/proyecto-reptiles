@@ -7,20 +7,21 @@ import { useMetrics } from "../../../../hooks/useMetrics";
 interface Props {
   theme: ThemeOptions;
   terrariumId: number;
+  esp32Code: string;
 }
 
-export const Metrics: React.FC<Props> = ({ theme, terrariumId }) => {
-  const { temperatura, uv, humedad } = useMetrics(terrariumId);
+export const Metrics: React.FC<Props> = ({ theme, terrariumId, esp32Code }) => {
+  const { temperatura, uv, humedad } = useMetrics(terrariumId, esp32Code);
   return (
     <div
       className={`${styles.container} ${
         theme === ThemeOptions.ANFIBIOS ? styles.anfibios : styles.reptiles
       } `}
     >
-      {humedad !== undefined && (
+      {humedad && (
         <ParticularMetric metricData={`${humedad}%`} metricName="Humedad" />
       )}
-      {temperatura !== undefined && (
+      {temperatura && (
         <ParticularMetric
           metricData={`${temperatura.toString().substring(0, 4)}°C`}
           metricName="Temperatura"

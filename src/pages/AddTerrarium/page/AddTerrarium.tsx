@@ -27,6 +27,7 @@ export const AddTerrarium = () => {
   };
   const handleRegister = async (data: AddTerrariumBase) => {
     const reqTerrarium = new AddTerrariumDto(data, id);
+    console.log(data);
     const res = await postTerrariumService(reqTerrarium, token);
     console.log(res);
     setLocation("/home");
@@ -36,6 +37,12 @@ export const AddTerrarium = () => {
       <span>Agregar Terrarios</span>
       <form className={styles.form}>
         <div className={styles.containerInput}>
+          <ContainerErrorInput>
+            <Input text="código" config={register("codeEsp")} />
+            {errors?.codeEsp?.message && (
+              <ErrorMessage message={errors?.codeEsp?.message} />
+            )}
+          </ContainerErrorInput>
           <ContainerErrorInput>
             <Input text="Nombre" config={register("name")} />
             {errors?.name?.message && (
