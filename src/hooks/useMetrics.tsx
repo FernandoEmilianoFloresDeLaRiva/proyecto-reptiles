@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { MetricsEntity } from "../entities/entity";
 import { io } from "socket.io-client";
 
-export const useMetrics = (terrariumId: number, codeEsp: string) => {
+export const useMetrics = (
+  terrariumId: number,
+  codeEsp: string,
+  token: string
+) => {
   const [metrics, setMetrics] = useState<MetricsEntity>({
     temperatura: 0,
     humedad: 0,
@@ -12,7 +16,11 @@ export const useMetrics = (terrariumId: number, codeEsp: string) => {
   const [preventWater, setPreventWater] = useState<boolean>(false);
   useEffect(() => {
     const getSocketData = async () => {
-      const socket = await io("http://44.221.215.74:8080");
+      const socket = await io("http://44.221.215.74:8080", {
+        auth: {
+          token,
+        },
+      });
       socket.on("showClient", (data: MetricsEntity) => {
         if (codeEsp === "" || terrariumId === 0) return;
         //we need to compare the terraium id with the real id terrarium

@@ -9,12 +9,18 @@ import { TerrariumContext } from "../../pages/Home/context";
 
 export const ContainerMetrics = () => {
   const theme = useSelector((state: RootState) => state.theme);
-  const {terrarium} = useContext(TerrariumContext)
+  const { token } = useSelector((state: RootState) => state.auth);
+  const { terrarium } = useContext(TerrariumContext);
   return (
     <section className={styles.container}>
       <ContainerImg />
-      <InfoTerrarium terrariumName={terrarium.name}/>
-      <Metrics theme={theme} terrariumId={terrarium.id} esp32Code={terrarium.esp32Code}/>
+      <InfoTerrarium terrariumName={terrarium.name} />
+      <Metrics
+        theme={theme}
+        terrariumId={terrarium.id}
+        esp32Code={terrarium.esp32Code}
+        token={token}
+      />
     </section>
   );
 };

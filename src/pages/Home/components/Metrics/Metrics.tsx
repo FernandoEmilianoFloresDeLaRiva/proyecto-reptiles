@@ -8,10 +8,16 @@ interface Props {
   theme: ThemeOptions;
   terrariumId: number;
   esp32Code: string;
+  token: string;
 }
 
-export const Metrics: React.FC<Props> = ({ theme, terrariumId, esp32Code }) => {
-  const [metrics, handleWater] = useMetrics(terrariumId, esp32Code);
+export const Metrics: React.FC<Props> = ({
+  theme,
+  terrariumId,
+  esp32Code,
+  token,
+}) => {
+  const [metrics, handleWater] = useMetrics(terrariumId, esp32Code, token);
   const { temperatura, uv, humedad } = metrics;
   return (
     <>
